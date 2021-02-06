@@ -7,14 +7,14 @@ border: {
  margin:20,
  padding: 20,
  borderWidth :1,
- borderColor: '#0f0',
+ borderColor: '#FF6666',
  // backgroundColor: '#f00',
 
 },
 
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#CCCCCC',
     alignItems: 'center',
     justifyContent: 'center',
   },

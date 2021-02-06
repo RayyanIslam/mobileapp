@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React,{Component} from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native';
 import HomeScreen from './src/screens/HomeScreen';
+import TabScreen from './src/screens/TabScreen';
 import Icon from 'react-native-vector-icons';
 
 import { createBottomTabNavigator } from 'react-navigation-tabs';
@@ -27,6 +28,9 @@ render(){
 const StackScreen = createStackNavigator({
 Home: {
     screen: HomeScreen,
+    navigationOptions: {
+    title: 'Feed'
+    }
 },
 Details: {
     screen: DetailsScreen,
@@ -50,7 +54,7 @@ tabBarIcon: ( {focused, tintColor} ) => (
 },
 
 Post: {
-screen: HomeScreen,
+screen: TabScreen,
 navigationOptions: {
 
 tabBarIcon: ( { focused , tintColor} ) => (
