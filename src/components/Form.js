@@ -5,12 +5,19 @@ import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
 
 
 class Form extends Component {
-constructor () {
+constructor() {
 super();
 this.state = {
-entries: [],
+    title: "", post: "",
 };
 }
+
+
+handleSubmit() {
+    this.props.submit(this.state.title, this.state.post);
+    this.setState({title: "",post: ""});
+}
+
 render()
 {
 return (
@@ -28,6 +35,10 @@ style={[styles.border, {height: 200}]}
 value={this.state.post}
 onChangeText={(post) => this.setState({ post: post })}
 />
+<Button
+          title={"submit"}
+          onPress={() => this.handleSubmit()}
+          />
 </View>
 
 )

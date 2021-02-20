@@ -11,12 +11,25 @@ this.state = {
 entries: [],
 };
 this.toDetails = this.toDetails.bind(this);
+this.handleDelete = this.handleDelete.bind(this);
 }
+
+handleDelete() {
+    fetch('https://protected-spire-82809.herokuapp.com/delete',
+    { method: 'DELETE'
+    }).then(response =>  {this.props.navigation.navigate('Feed');
+});
+}
+
 componentDidMount(){
 fetch ('https://protected-spire-82809.herokuapp.com/entries').then(response => response.json()).then(jsonResponse => this.setState( { entries: jsonResponse}));
 }
 toDetails(item) {
-this.props.navigation.navigate('Details', item);
+ this.props.navigation.navigate('Details', item);
+ }
+
+componentWillReceiveProps() {
+    this.componentDidMount();
 }
 
 render(){
@@ -28,6 +41,7 @@ data = {this.state.entries}
 renderItem={({item}) => <Entry item={item} toDetails={this.toDetails} />}
 keyExtractor = {item => item['_id']}
 />
+<Button title="DELETE" onPress={() => this.handleDelete()}/>
 
 
 </View>

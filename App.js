@@ -14,15 +14,15 @@ import DetailsScreen from './src/screens/DetailsScreen'
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 import styles from './src/styles/Style'
-class App extends Component{
-render(){
-  return (
-    <MainScreenNavigator
-      onNavigationStateChange = { () => this.setState({})}
-      screenProps = {this.state}
-      />
-  );
-}
+class App extends React.Component {
+    render() {
+        return (
+            <MainScreenNavigator
+                onNavigationStateChange={() => this.setState({})}
+                screenProps={this.state}
+            />
+        )
+    }
 }
 
 const StackScreen = createStackNavigator({
@@ -66,4 +66,4 @@ tabBarIcon: ( { focused , tintColor} ) => (
 
 }));
 
-export default MainScreenNavigator;
+export default App;

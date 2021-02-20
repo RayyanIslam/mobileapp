@@ -6,9 +6,9 @@ render() {
 return (
     <View  style={styles.border}>
     <Button
-    title={this.props.item.title}
-    onPress={() => this.props.toDetails(this.props.item)}
-    />
+          title={this.props.item.title}
+          onPress={() => this.props.toDetails(this.props.item)}
+          />
     </View>
 );
 }

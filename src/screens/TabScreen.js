@@ -7,11 +7,11 @@ import { View, FlatList,StyleSheet,Button } from 'react-native';
 class TabScreen extends Component {
 constructor() {
 super();
-};
+this.submit = this.submit.bind(this);
 }
 submit(title, post) {
     if (title && post) {
-        fetch('https://protected-spire-82809.herokuapp.com/entries', {
+        fetch('https://protected-spire-82809.herokuapp.com/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -22,10 +22,15 @@ submit(title, post) {
         });
     }
 }
+
+
+
 render()
 {
 return (
-<Form />
+<View style = {styles.container}>
+<Form submit={this.submit} />
+</View>
 )
 }
 }
