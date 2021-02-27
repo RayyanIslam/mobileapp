@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React,{Component} from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native';
 import HomeScreen from './src/screens/HomeScreen';
+import DeleteScreen from './src/screens/DeleteScreen';
 import TabScreen from './src/screens/TabScreen';
 import Icon from 'react-native-vector-icons';
 
@@ -48,7 +49,7 @@ screen: StackScreen,
 navigationOptions: {
 
 tabBarIcon: ( {focused, tintColor} ) => (
-    <FontAwesome name= 'windows' color = {tintColor} size = {25} />
+    <FontAwesome name= 'home' color = {tintColor} size = {25} />
 ),
 },
 },
@@ -58,11 +59,23 @@ screen: TabScreen,
 navigationOptions: {
 
 tabBarIcon: ( { focused , tintColor} ) => (
-    <FontAwesome name = 'apple' color = {tintColor} size = {25}  />
+    <FontAwesome name = 'envelope' color = {tintColor} size = {25}  />
 ),
 
 },
 },
+
+Delete: {
+screen: DeleteScreen,
+navigationOptions: {
+
+tabBarIcon: ( { focused , tintColor} ) => (
+    <FontAwesome name = 'trash' color = {tintColor} size = {25}  />
+),
+
+},
+},
+
 
 }));
 

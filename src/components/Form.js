@@ -1,6 +1,7 @@
 import React, { Component } from'react';
 import styles from '../styles/Style';
-import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Button, ImageBackground } from 'react-native';
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 
 
@@ -22,6 +23,7 @@ render()
 {
 return (
 <View style={styles.container} >
+
 <Text>Title:</Text>
 <TextInput
 style={[styles.border, {height: 80}]}
@@ -35,10 +37,8 @@ style={[styles.border, {height: 200}]}
 value={this.state.post}
 onChangeText={(post) => this.setState({ post: post })}
 />
-<Button
-          title={"submit"}
-          onPress={() => this.handleSubmit()}
-          />
+
+<FontAwesome name= 'paper-plane' color = 'blue' size = {50} onPress={() => this.handleSubmit()}/>
 </View>
 
 )

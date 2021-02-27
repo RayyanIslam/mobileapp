@@ -2,7 +2,8 @@ import React , {Component} from 'react';
 
 import styles from '../styles/Style';
 import Entry from '../components/Entry';
-import { View, FlatList,StyleSheet,Button } from 'react-native';
+import { View, FlatList,StyleSheet,Button, Image, ImageBackground } from 'react-native';
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 class HomeScreen extends Component {
 constructor () {
@@ -34,17 +35,21 @@ componentWillReceiveProps() {
 
 render(){
 return (
-<View style ={styles.container} >
 
+<View style ={styles.container} >
+<ImageBackground source={require('../images/images.jpg')} style={styles.stretch} >
 <FlatList
 data = {this.state.entries}
 renderItem={({item}) => <Entry item={item} toDetails={this.toDetails} />}
 keyExtractor = {item => item['_id']}
 />
-<Button title="DELETE" onPress={() => this.handleDelete()}/>
 
 
+
+<FontAwesome name= 'remove' color = 'red' size = {100} onPress={() => this.handleDelete()}/>
+</ImageBackground>
 </View>
+
 
 );
 

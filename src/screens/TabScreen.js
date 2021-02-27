@@ -2,7 +2,7 @@ import React , {Component} from 'react';
 
 import styles from '../styles/Style';
 import Form from '../components/Form';
-import { View, FlatList,StyleSheet,Button } from 'react-native';
+import { View, FlatList,StyleSheet,Button, ImageBackground } from 'react-native';
 
 class TabScreen extends Component {
 constructor() {
@@ -28,9 +28,11 @@ submit(title, post) {
 render()
 {
 return (
+
 <View style = {styles.container}>
 <Form submit={this.submit} />
 </View>
+
 )
 }
 }
