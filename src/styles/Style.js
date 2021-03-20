@@ -19,6 +19,13 @@ border: {
     alignItems: 'center',
     justifyContent: 'center',
   },
+  title: {
+      fontWeight: 'bold',
+      fontSize: 20,
+      backgroundColor: '#ededed',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
 
   stretch: {
     width:'100%',
@@ -27,6 +34,14 @@ border: {
     flex: 1,
     alignItems: 'center',
   },
+
+  fifty: {
+  width:'80%',
+  height:'30%',
+  resizeMode:'cover',
+  flex: 1,
+  alignItems: 'center',
+  }
 
 });
 
